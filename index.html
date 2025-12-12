@@ -1,4 +1,5 @@
-```html
+<!-- PLIK: index.html -->
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -60,105 +61,105 @@
 </head>
 
 <body>
-  <div class="container">
 
-    <h1>MECHANIC</h1>
-    <select id="mechanicDropdown">
-      <option value="">— wybierz mechanika —</option>
-      <option value="ARTEM_MAKOVETSKYI">ARTEM_MAKOVETSKYI</option>
-      <option value="DAWID_PIETRZYCKI">DAWID_PIETRZYCKI</option>
-      <option value="KINGA_SZCZENIOWSKA">KINGA_SZCZENIOWSKA</option>
-      <option value="MATEUSZ_NOWAK">MATEUSZ_NOWAK</option>
-      <option value="AMELIA_KACZKOWSKA">AMELIA_KACZKOWSKA</option>
-      <option value="NATALIIA_SILIVEISTROVA">NATALIIA_SILIVEISTROVA</option>
-      <option value="TETIANA_SHYMANSKA">TETIANA_SHYMANSKA</option>
-      <option value="VASYL_VOVK">VASYL_VOVK</option>
-      <option value="VIRA_SANDOMIERSKA">VIRA_SANDOMIERSKA</option>
-      <option value="MAŁGORZATA_BARAŃSKA">MAŁGORZATA_BARAŃSKA</option>
-      <option value="NATALIIA_VASALAKIIEVA">NATALIIA_VASALAKIIEVA</option>
-    </select>
+<div class="container">
 
-    <h1>SPARE PART</h1>
-    <select id="sparePartDropdown">
-      <option value="">— wybierz część —</option>
+  <h1>MECHANIC</h1>
+  <select id="mechanicDropdown">
+    <option value="">— wybierz mechanika —</option>
+    <option value="ARTEM_MAKOVETSKYI">ARTEM_MAKOVETSKYI</option>
+    <option value="DAWID_PIETRZYCKI">DAWID_PIETRZYCKI</option>
+    <option value="KINGA_SZCZENIOWSKA">KINGA_SZCZENIOWSKA</option>
+    <option value="MATEUSZ_NOWAK">MATEUSZ_NOWAK</option>
+    <option value="AMELIA_KACZKOWSKA">AMELIA_KACZKOWSKA</option>
+    <option value="NATALIIA_SILIVEISTROVA">NATALIIA_SILIVEISTROVA</option>
+    <option value="TETIANA_SHYMANSKA">TETIANA_SHYMANSKA</option>
+    <option value="VASYL_VOVK">VASYL_VOVK</option>
+    <option value="VIRA_SANDOMIERSKA">VIRA_SANDOMIERSKA</option>
+    <option value="MAŁGORZATA_BARAŃSKA">MAŁGORZATA_BARAŃSKA</option>
+    <option value="NATALIIA_VASALAKIIEVA">NATALIIA_VASALAKIIEVA</option>
+  </select>
 
-      <option value="4001692 DISPLAY">4001692 DISPLAY</option>
-      <option value="4000172 DISPLAY COVER">4000172 DISPLAY COVER</option>
-      <option value="4000161 MANETKA">4000161 MANETKA</option>
-      <option value="4000618 GUZIK DO KIERUNKOWSKAZÓW">4000618 GUZIK DO KIERUNKOWSKAZÓW</option>
-      <option value="4000169 KLAMKA LEWA">4000169 KLAMKA LEWA</option>
-      <option value="4000162 KLAMKA PRAWA">4000162 KLAMKA PRAWA</option>
+  <h1>SPARE PART</h1>
+  <select id="sparePartDropdown">
+    <option value="">— wybierz część —</option>
 
-      <!--
-        DLACZEGO TYLKO "ŚWIATEŁKO" NIE DZIAŁAŁO:
-        MiniExtensions/Forms często matchuje prefill do opcji jako "dokładny tekst".
-        Tutaj podejrzany jest znak "Ł" w środku słowa (ŚWIATEŁKO). Jeśli w formularzu opcja jest wpisana jako:
-          "4000182 SWIATELKO KIEROWNIC" (bez Ł),
-        to wysyłanie "ŚWIATEŁKO" nie zmatchuje, mimo że inne polskie znaki gdzie indziej mogą być zapisane identycznie.
-        Rozwiązanie: value ustawiamy na ASCII (bez polskich znaków), a użytkownik nadal widzi ładny tekst.
-      -->
-      <option value="4000182 SWIATELKO KIEROWNIC">4000182 ŚWIATEŁKO KIEROWNIC</option>
+    <option value="4001692 DISPLAY">4001692 DISPLAY</option>
+    <option value="4000172 DISPLAY COVER">4000172 DISPLAY COVER</option>
+    <option value="4000161 MANETKA">4000161 MANETKA</option>
+    <option value="4000618 GUZIK DO KIERUNKOWSKAZÓW">4000618 GUZIK DO KIERUNKOWSKAZÓW</option>
+    <option value="4000169 KLAMKA LEWA">4000169 KLAMKA LEWA</option>
+    <option value="4000162 KLAMKA PRAWA">4000162 KLAMKA PRAWA</option>
 
-      <option value="4000611 KIERUNKOWSKAZ KIEROWNICY LEWY">4000611 KIERUNKOWSKAZ KIEROWNICY LEWY</option>
-      <option value="4000612 KIERUNKOWSKAZ KIEROWNICY PRAWY">4000612 KIERUNKOWSKAZ KIEROWNICY PRAWY</option>
-      <option value="4000614 KABEL DO KIERUNKOWSKAZÓW KIEROWNICY">4000614 KABEL DO KIERUNKOWSKAZÓW KIEROWNICY</option>
-      <option value="4000420 PRZEDŁUŻKA KABLA KIEROWNICY">4000420 PRZEDŁUŻKA KABLA KIEROWNICY</option>
-      <option value="4000164 PLASTIK GÓRA">4000164 PLASTIK GÓRA</option>
-      <option value="4000180 PLASTIK DÓŁ">4000180 PLASTIK DÓŁ</option>
-      <option value="4001685 STEROWNIK">4001685 STEROWNIK</option>
-      <option value="4000701 ZAMEK">4000701 ZAMEK</option>
-      <option value="4001721 CONTROL BOX">4001721 CONTROL BOX</option>
-      <option value="4001723 KABEL PRZÓD (TRÓJNIKI)">4001723 KABEL PRZÓD (TRÓJNIKI)</option>
-      <option value="4001035 KABEL TYLNY">4001035 KABEL TYLNY</option>
-      <option value="4001006 SILNIK BEZ OPONY">4001006 SILNIK BEZ OPONY</option>
-    </select>
+    <!-- DOKŁADNIE: bez „Ś”, z polskim „ł” -->
+    <option value="4000182 swiatełko kierownic">4000182 swiatełko kierownic</option>
 
-    <button id="goButton" type="button">GO</button>
-  </div>
+    <option value="4000611 KIERUNKOWSKAZ KIEROWNICY LEWY">4000611 KIERUNKOWSKAZ KIEROWNICY LEWY</option>
+    <option value="4000612 KIERUNKOWSKAZ KIEROWNICY PRAWY">4000612 KIERUNKOWSKAZ KIEROWNICY PRAWY</option>
+    <option value="4000614 KABEL DO KIERUNKOWSKAZÓW KIEROWNICY">4000614 KABEL DO KIERUNKOWSKAZÓW KIEROWNICY</option>
+    <option value="4000420 PRZEDŁUŻKA KABLA KIEROWNICY">4000420 PRZEDŁUŻKA KABLA KIEROWNICY</option>
+    <option value="4000164 PLASTIK GÓRA">4000164 PLASTIK GÓRA</option>
+    <option value="4000180 PLASTIK DÓŁ">4000180 PLASTIK DÓŁ</option>
+    <option value="4001685 STEROWNIK">4001685 STEROWNIK</option>
+    <option value="4000701 ZAMEK">4000701 ZAMEK</option>
+    <option value="4001721 CONTROL BOX">4001721 CONTROL BOX</option>
+    <option value="4001723 KABEL PRZÓD (TRÓJNIKI)">4001723 KABEL PRZÓD (TRÓJNIKI)</option>
+    <option value="4001035 KABEL TYLNY">4001035 KABEL TYLNY</option>
+    <option value="4001006 SILNIK BEZ OPONY">4001006 SILNIK BEZ OPONY</option>
+  </select>
 
-  <script>
-    const FORM_BASE_URL = "https://web.miniextensions.com/iZC8bQQmgC94HrP8oiSm";
+  <button id="goButton" type="button">GO</button>
 
-    const PREFILL_KEYS = {
-      mechanic: [
-        "prefill_Mechanic",
-        "prefill_MECHANIC",
-        "prefill_Mechanic ",
-        "prefill_Mechanic_Name",
-        "prefill_MechanicName"
-      ],
-      sparePart: [
-        "prefill_Spare_Part",
-        "prefill_SPARE_PART",
-        "prefill_Spare Part",
-        "prefill_SPARE PART",
-        "prefill_SparePart"
-      ]
-    };
+</div>
 
-    function buildRedirectUrl(mechanic, sparePart) {
-      const url = new URL(FORM_BASE_URL);
-      url.search = "";
+<script>
+  const FORM_BASE_URL = "https://web.miniextensions.com/iZC8bQQmgC94HrP8oiSm";
 
-      for (const k of PREFILL_KEYS.mechanic) url.searchParams.set(k, mechanic);
-      for (const k of PREFILL_KEYS.sparePart) url.searchParams.set(k, sparePart);
+  const PREFILL_KEYS = {
+    mechanic: [
+      "prefill_Mechanic",
+      "prefill_MECHANIC",
+      "prefill_Mechanic ",
+      "prefill_Mechanic_Name",
+      "prefill_MechanicName"
+    ],
+    sparePart: [
+      "prefill_Spare_Part",
+      "prefill_SPARE_PART",
+      "prefill_Spare Part",
+      "prefill_SPARE PART",
+      "prefill_SparePart"
+    ]
+  };
 
-      return url.toString();
+  function buildRedirectUrl(mechanic, sparePart) {
+    const url = new URL(FORM_BASE_URL);
+    url.search = "";
+
+    for (const k of PREFILL_KEYS.mechanic) {
+      url.searchParams.set(k, mechanic);
     }
 
-    document.getElementById("goButton").addEventListener("click", function () {
-      const mechanic = document.getElementById("mechanicDropdown").value;
-      const sparePart = document.getElementById("sparePartDropdown").value;
+    for (const k of PREFILL_KEYS.sparePart) {
+      url.searchParams.set(k, sparePart);
+    }
 
-      if (!mechanic || !sparePart) {
-        alert("Wybierz mechanika i część.");
-        return;
-      }
+    return url.toString();
+  }
 
-      const redirectUrl = buildRedirectUrl(mechanic, sparePart);
-      window.location.assign(redirectUrl);
-    });
-  </script>
+  document.getElementById("goButton").addEventListener("click", function () {
+    const mechanic = document.getElementById("mechanicDropdown").value;
+    const sparePart = document.getElementById("sparePartDropdown").value;
+
+    if (!mechanic || !sparePart) {
+      alert("Wybierz mechanika i część.");
+      return;
+    }
+
+    const redirectUrl = buildRedirectUrl(mechanic, sparePart);
+    window.location.assign(redirectUrl);
+  });
+</script>
+
 </body>
 </html>
-```
