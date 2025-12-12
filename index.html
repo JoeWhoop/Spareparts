@@ -2,129 +2,181 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanik – Spare Parts</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mechanik – Spare Parts</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
 
-        h1 {
-            font-size: 56px;
-            margin: 20px 0 10px;
-        }
+    h1 {
+      font-size: 56px;
+      margin: 20px 0 10px;
+    }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-        select {
-            width: 90%;
-            max-width: 900px;
-            height: 90px;
-            font-size: 40px;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 10px 0;
-            overflow: hidden;
-            white-space: nowrap;
-        }
+    select {
+      width: 90%;
+      max-width: 900px;
+      height: 90px;
+      font-size: 40px;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
-        #goButton {
-            margin-top: 40px;
-            padding: 20px 40px;
-            font-size: 36px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            width: 90%;
-            max-width: 900px;
-        }
+    #goButton {
+      margin-top: 40px;
+      padding: 20px 40px;
+      font-size: 36px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 90%;
+      max-width: 900px;
+    }
 
-        #goButton:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    #goButton:hover {
+      background-color: #0056b3;
+    }
+
+    .hint {
+      font-size: 16px;
+      opacity: 0.65;
+      margin-top: 10px;
+      max-width: 900px;
+      width: 90%;
+      line-height: 1.4;
+    }
+  </style>
 </head>
 
 <body>
-
-<div class="container">
-
+  <div class="container">
     <h1>SPARE PART</h1>
     <select id="sparePartDropdown">
-        <option value="">— wybierz część —</option>
-        <option value="4001692_DISPLAY">4001692 DISPLAY</option>
-        <option value="4000172_DISPLAY_COVER">4000172 DISPLAY COVER</option>
-        <option value="4000161_MANETKA">4000161 MANETKA</option>
-        <option value="4000618_GUZIK_DO_KIERUNKOWSKAZOW">4000618 GUZIK DO KIERUNKOWSKAZÓW</option>
-        <option value="4000169_KLAMKA_LEWA">4000169 KLAMKA LEWA</option>
-        <option value="4000162_KLAMKA_PRAWA">4000162 KLAMKA PRAWA</option>
-        <option value="4000182_SWIATELKO_KIEROWNIC">4000182 ŚWIATEŁKO KIEROWNIC</option>
-        <option value="4000611_KIERUNKOWSKAZ_KIEROWNICY_LEWY">4000611 KIERUNKOWSKAZ KIEROWNICY LEWY</option>
-        <option value="4000612_KIERUNKOWSKAZ_KIEROWNICY_PRAWY">4000612 KIERUNKOWSKAZ KIEROWNICY PRAWY</option>
-        <option value="4000614_KABEL_DO_KIERUNKOWSKAZOW_KIEROWNICY">4000614 KABEL DO KIERUNKOWSKAZÓW KIEROWNICY</option>
-        <option value="4000420_PRZEDLUZKA_KABLA_KIEROWNICY">4000420 PRZEDŁUŻKA KABLA KIEROWNICY</option>
-        <option value="4000164_PLASTIK_GORA">4000164 PLASTIK GÓRA</option>
-        <option value="4000180_PLASTIK_DOL">4000180 PLASTIK DÓŁ</option>
-        <option value="4001685_STEROWNIK">4001685 STEROWNIK</option>
-        <option value="4000701_ZAMEK">4000701 ZAMEK</option>
-        <option value="4001721_CONTROL_BOX">4001721 CONTROL BOX</option>
-        <option value="4001723_KABEL_PRZOD_TROJNIKI">4001723 KABEL PRZÓD (TRÓJNIKI)</option>
-        <option value="4001035_KABEL_TYLNY">4001035 KABEL TYLNY</option>
-        <option value="4001006_SILNIK_BEZ_OPONY">4001006 SILNIK BEZ OPONY</option>
+      <option value="">— wybierz część —</option>
+      <option value="4001692_DISPLAY">4001692 DISPLAY</option>
+      <option value="4000172_DISPLAY_COVER">4000172 DISPLAY COVER</option>
+      <option value="4000161_MANETKA">4000161 MANETKA</option>
+      <option value="4000618_GUZIK_DO_KIERUNKOWSKAZOW">4000618 GUZIK DO KIERUNKOWSKAZÓW</option>
+      <option value="4000169_KLAMKA_LEWA">4000169 KLAMKA LEWA</option>
+      <option value="4000162_KLAMKA_PRAWA">4000162 KLAMKA PRAWA</option>
+      <option value="4000182_SWIATELKO_KIEROWNIC">4000182 ŚWIATEŁKO KIEROWNIC</option>
+      <option value="4000611_KIERUNKOWSKAZ_KIEROWNICY_LEWY">4000611 KIERUNKOWSKAZ KIEROWNICY LEWY</option>
+      <option value="4000612_KIERUNKOWSKAZ_KIEROWNICY_PRAWY">4000612 KIERUNKOWSKAZ KIEROWNICY PRAWY</option>
+      <option value="4000614_KABEL_DO_KIERUNKOWSKAZOW_KIEROWNICY">4000614 KABEL DO KIERUNKOWSKAZÓW KIEROWNICY</option>
+      <option value="4000420_PRZEDLUZKA_KABLA_KIEROWNICY">4000420 PRZEDŁUŻKA KABLA KIEROWNICY</option>
+      <option value="4000164_PLASTIK_GORA">4000164 PLASTIK GÓRA</option>
+      <option value="4000180_PLASTIK_DOL">4000180 PLASTIK DÓŁ</option>
+      <option value="4001685_STEROWNIK">4001685 STEROWNIK</option>
+      <option value="4000701_ZAMEK">4000701 ZAMEK</option>
+      <option value="4001721_CONTROL_BOX">4001721 CONTROL BOX</option>
+      <option value="4001723_KABEL_PRZOD_TROJNIKI">4001723 KABEL PRZÓD (TRÓJNIKI)</option>
+      <option value="4001035_KABEL_TYLNY">4001035 KABEL TYLNY</option>
+      <option value="4001006_SILNIK_BEZ_OPONY">4001006 SILNIK BEZ OPONY</option>
     </select>
 
     <h1>MECHANIC</h1>
     <select id="mechanicDropdown">
-        <option value="">— wybierz mechanika —</option>
-        <option value="ARTEM_MAKOVETSKYI">ARTEM_MAKOVETSKYI</option>
-        <option value="DAWID_PIETRZYCKI">DAWID_PIETRZYCKI</option>
-        <option value="KINGA_SZCZENIOWSKA">KINGA_SZCZENIOWSKA</option>
-        <option value="MATEUSZ_NOWAK">MATEUSZ_NOWAK</option>
-        <option value="AMELIA_KACZKOWSKA">AMELIA_KACZKOWSKA</option>
-        <option value="NATALIIA_SILIVEISTROVA">NATALIIA_SILIVEISTROVA</option>
-        <option value="TETIANA_SHYMANSKA">TETIANA_SHYMANSKA</option>
-        <option value="VASYL_VOVK">VASYL_VOVK</option>
-        <option value="VIRA_SANDOMIERSKA">VIRA_SANDOMIERSKA</option>
-        <option value="MAŁGORZATA_BARAŃSKA">MAŁGORZATA_BARAŃSKA</option>
-        <option value="NATALIIA_VASALAKIIEVA">NATALIIA_VASALAKIIEVA</option>
+      <option value="">— wybierz mechanika —</option>
+      <option value="ARTEM_MAKOVETSKYI">ARTEM_MAKOVETSKYI</option>
+      <option value="DAWID_PIETRZYCKI">DAWID_PIETRZYCKI</option>
+      <option value="KINGA_SZCZENIOWSKA">KINGA_SZCZENIOWSKA</option>
+      <option value="MATEUSZ_NOWAK">MATEUSZ_NOWAK</option>
+      <option value="AMELIA_KACZKOWSKA">AMELIA_KACZKOWSKA</option>
+      <option value="NATALIIA_SILIVEISTROVA">NATALIIA_SILIVEISTROVA</option>
+      <option value="TETIANA_SHYMANSKA">TETIANA_SHYMANSKA</option>
+      <option value="VASYL_VOVK">VASYL_VOVK</option>
+      <option value="VIRA_SANDOMIERSKA">VIRA_SANDOMIERSKA</option>
+      <option value="MAŁGORZATA_BARAŃSKA">MAŁGORZATA_BARAŃSKA</option>
+      <option value="NATALIIA_VASALAKIIEVA">NATALIIA_VASALAKIIEVA</option>
     </select>
 
     <button id="goButton" type="button">GO</button>
-</div>
 
-<script>
-document.getElementById("goButton").addEventListener("click", function () {
-    const mechanic = document.getElementById("mechanicDropdown").value;
-    const sparePart = document.getElementById("sparePartDropdown").value;
+    <div class="hint">
+      Jeśli po przekierowaniu formularz nie ma zaznaczonych wartości, to znaczy że serwis nie rozpoznaje nazw parametrów.
+      Ten plik wysyła równolegle kilka wariantów parametrów (z/bez spacji, różne nazwy), żeby to wymusić.
+    </div>
+  </div>
 
-    if (!mechanic || !sparePart) {
-        alert("Wybierz mechanika i część.");
-        return;
+  <script>
+    // Bazowy link (miniExtensions)
+    const FORM_BASE_URL = "https://web.miniextensions.com/iZC8bQQmgC94HrP8oiSm";
+
+    // Wysyłamy kilka wariantów kluczy prefill, bo często zależy to od EXACT nazwy pola w formularzu/konfiguracji.
+    const PREFILL_KEYS = {
+      mechanic: [
+        "prefill_Mechanic",
+        "prefill_MECHANIC",
+        "prefill_Mechanic ",
+        "prefill_Mechanic_Name",
+        "prefill_MechanicName"
+      ],
+      sparePart: [
+        "prefill_Spare_Part",
+        "prefill_SPARE_PART",
+        "prefill_Spare Part",      // uwaga: klucz ze spacją (zostanie zakodowany w URL)
+        "prefill_SPARE PART",      // klucz ze spacją
+        "prefill_SparePart"
+      ]
+    };
+
+    function buildRedirectUrl(mechanic, sparePart) {
+      const url = new URL(FORM_BASE_URL);
+
+      // Wyczyść ewentualne stare parametry (na wypadek jakby były w bazowym URL)
+      url.search = "";
+
+      // Dodaj wszystkie warianty
+      for (const k of PREFILL_KEYS.mechanic) url.searchParams.set(k, mechanic);
+      for (const k of PREFILL_KEYS.sparePart) url.searchParams.set(k, sparePart);
+
+      return url.toString();
     }
 
-    const redirectUrl =
-        "https://web.miniextensions.com/iZC8bQQmgC94HrP8oiSm" +
-        "?prefill_Mechanic=" + encodeURIComponent(mechanic) +
-        "&prefill_Spare_Part=" + encodeURIComponent(sparePart);
+    document.getElementById("goButton").addEventListener("click", function () {
+      const mechanic = document.getElementById("mechanicDropdown").value;
+      const sparePart = document.getElementById("sparePartDropdown").value;
 
-    window.location.assign(redirectUrl);
-});
-</script>
+      if (!mechanic || !sparePart) {
+        alert("Wybierz mechanika i część.");
+        return;
+      }
 
+      // Zapis lokalny (bez alertów)
+      try {
+        localStorage.setItem("mechanikSession", JSON.stringify({
+          mechanic,
+          sparePart,
+          ts: new Date().toISOString()
+        }));
+      } catch (e) {}
+
+      const redirectUrl = buildRedirectUrl(mechanic, sparePart);
+
+      // Przekierowanie
+      window.location.assign(redirectUrl);
+    });
+  </script>
 </body>
 </html>
 ```
