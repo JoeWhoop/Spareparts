@@ -81,13 +81,24 @@
     <h1>SPARE PART</h1>
     <select id="sparePartDropdown">
       <option value="">— wybierz część —</option>
+
       <option value="4001692 DISPLAY">4001692 DISPLAY</option>
       <option value="4000172 DISPLAY COVER">4000172 DISPLAY COVER</option>
       <option value="4000161 MANETKA">4000161 MANETKA</option>
       <option value="4000618 GUZIK DO KIERUNKOWSKAZÓW">4000618 GUZIK DO KIERUNKOWSKAZÓW</option>
       <option value="4000169 KLAMKA LEWA">4000169 KLAMKA LEWA</option>
       <option value="4000162 KLAMKA PRAWA">4000162 KLAMKA PRAWA</option>
-      <option value="4000182 SWIATEŁKO KIEROWNIC">4000182 SWIATEŁKO KIEROWNIC</option>
+
+      <!--
+        DLACZEGO TYLKO "ŚWIATEŁKO" NIE DZIAŁAŁO:
+        MiniExtensions/Forms często matchuje prefill do opcji jako "dokładny tekst".
+        Tutaj podejrzany jest znak "Ł" w środku słowa (ŚWIATEŁKO). Jeśli w formularzu opcja jest wpisana jako:
+          "4000182 SWIATELKO KIEROWNIC" (bez Ł),
+        to wysyłanie "ŚWIATEŁKO" nie zmatchuje, mimo że inne polskie znaki gdzie indziej mogą być zapisane identycznie.
+        Rozwiązanie: value ustawiamy na ASCII (bez polskich znaków), a użytkownik nadal widzi ładny tekst.
+      -->
+      <option value="4000182 SWIATELKO KIEROWNIC">4000182 ŚWIATEŁKO KIEROWNIC</option>
+
       <option value="4000611 KIERUNKOWSKAZ KIEROWNICY LEWY">4000611 KIERUNKOWSKAZ KIEROWNICY LEWY</option>
       <option value="4000612 KIERUNKOWSKAZ KIEROWNICY PRAWY">4000612 KIERUNKOWSKAZ KIEROWNICY PRAWY</option>
       <option value="4000614 KABEL DO KIERUNKOWSKAZÓW KIEROWNICY">4000614 KABEL DO KIERUNKOWSKAZÓW KIEROWNICY</option>
@@ -97,7 +108,7 @@
       <option value="4001685 STEROWNIK">4001685 STEROWNIK</option>
       <option value="4000701 ZAMEK">4000701 ZAMEK</option>
       <option value="4001721 CONTROL BOX">4001721 CONTROL BOX</option>
-      <option value="4001723 KABEL PRZÓD TRÓJNIK">4001723 KABEL PRZÓD TRÓJNIK</option>
+      <option value="4001723 KABEL PRZÓD (TRÓJNIKI)">4001723 KABEL PRZÓD (TRÓJNIKI)</option>
       <option value="4001035 KABEL TYLNY">4001035 KABEL TYLNY</option>
       <option value="4001006 SILNIK BEZ OPONY">4001006 SILNIK BEZ OPONY</option>
     </select>
@@ -106,8 +117,6 @@
   </div>
 
   <script>
-    // To MUSI zostać takie jak wcześniej (wiele wariantów), bo MiniExtensions/Google Forms często
-    // wymaga DOKŁADNEJ nazwy parametru. Jeden "prefill_Spare_Part" u Ciebie nie wystarcza.
     const FORM_BASE_URL = "https://web.miniextensions.com/iZC8bQQmgC94HrP8oiSm";
 
     const PREFILL_KEYS = {
@@ -121,8 +130,8 @@
       sparePart: [
         "prefill_Spare_Part",
         "prefill_SPARE_PART",
-        "prefill_Spare Part",     // klucz ze spacją
-        "prefill_SPARE PART",     // klucz ze spacją
+        "prefill_Spare Part",
+        "prefill_SPARE PART",
         "prefill_SparePart"
       ]
     };
@@ -131,10 +140,7 @@
       const url = new URL(FORM_BASE_URL);
       url.search = "";
 
-      // mechanik
       for (const k of PREFILL_KEYS.mechanic) url.searchParams.set(k, mechanic);
-
-      // spare part (wartość MA SPACJE – dokładnie jak w formularzu)
       for (const k of PREFILL_KEYS.sparePart) url.searchParams.set(k, sparePart);
 
       return url.toString();
